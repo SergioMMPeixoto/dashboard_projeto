@@ -5,12 +5,12 @@ import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
 import { Navbar, Footer, Sidebar, ThemeSettings } from './components';
 
-import { Home, Orders, Calendar, Employees, Students, Stock, ColorPicker, ColorMapping} from './pages';
+import { Home, Orders, Calendar, Employees, Students, Stock, ColorMapping} from './pages';
 
 import './App.css'
 
 const App = () => {
-  const activeMenu = false;
+  const activeMenu = true;
 
   return (
     <div>
@@ -54,7 +54,6 @@ const App = () => {
 
           {/* Apps */}
           <Route path="/calendar" element={<Calendar />} />
-          <Route path="/colorpicker" element={<ColorPicker />} />
 
           {/* Grafos para depois, ainda nao ha fonte de dados em condiçoes por isso pode esperar
           <Route path="/desperdicio" element="Desperdicio" />

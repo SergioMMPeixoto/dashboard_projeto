@@ -2,7 +2,6 @@ export { default as Home } from './Home';
 export { default as Orders } from './Orders';
 export { default as Employees } from './Employees';
 export { default as Students } from './Students';
-export { default as ColorPicker } from './ColorPicker';
 export { default as Calendar } from './Calendar';
 export { default as ColorMapping } from './Charts/ColorMapping';
 export { default as Stock } from './Charts/Stock';
