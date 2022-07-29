@@ -3,6 +3,10 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { FiSettings } from 'react-icons/fi';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
+import { Navbar, Footer, Sidebar, ThemeSettings } from './components';
+
+import { Home, Orders, Calendar, Employees, Students, Stock, ColorPicker, ColorMapping} from './pages';
+
 import './App.css'
 
 const App = () => {
@@ -22,11 +26,11 @@ const App = () => {
         </div>
         {activeMenu ? (
           <div className='w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white'>
-            Sidebar
+            < Sidebar />
           </div>
         ) : (
           <div className='w-0 dark:bg-secondary-dark-bg'>
-            Invisivel
+            <Sidebar />
           </div>
         )}
         <div className={
@@ -34,24 +38,29 @@ const App = () => {
           }>
           
           <div className='fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full'>
-            Navbar
+            <Navbar/>
           </div>
         </div>
         <Routes>
           {/*  Dashboard principal  */}
-          <Route path="/" element="Home" />
-          <Route path="/home" element="Home" />
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
 
           {/* Paginas */}
-          <Route path="/inventario" element="Inventario" />
-          <Route path="/importar" element="Importar" />
+          <Route path="/orders" element={<Orders />} />
+          <Route path="/employees" element={<Employees />} />
+          <Route path="/students" element={<Students />} />
+          {/* <Route path="/importar" element="Importar" />*/}
 
           {/* Apps */}
-          <Route path="/calendario" element="Calendário" />
+          <Route path="/calendar" element={<Calendar />} />
+          <Route path="/colorpicker" element={<ColorPicker />} />
 
-          {/* Grafos */}
+          {/* Grafos para depois, ainda nao ha fonte de dados em condiçoes por isso pode esperar
           <Route path="/desperdicio" element="Desperdicio" />
           <Route path="/consumo" element="Consumo" />
+          */}
+          
         </Routes>
       </div>
       </BrowserRouter>
