@@ -12,7 +12,13 @@ import { useStateContext } from '../contexts/ContextProvider';
 
 
 const Sidebar = () => {
-  const {activeMenu, setActiveMenu} = useStateContext();
+  const {activeMenu, setActiveMenu, screenSize} = useStateContext();
+
+  const handleCloseSideBar = () => {
+    if (activeMenu && screenSize < 900) {
+      setActiveMenu(false);
+    }
+  }
 
   const activeLink = 'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg  text-white  text-md m-2';
   const normalLink = 'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-md text-gray-700 dark:text-gray-200 dark:hover:text-black hover:bg-light-gray m-2';
@@ -21,7 +27,7 @@ const Sidebar = () => {
     <div className="ml-3 h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto pb-10">
       {activeMenu && (<>
       <div className='flex justify-between items-center'>
-        <Link to="/" onClick={() => setActiveMenu(false)} className="items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900">
+        <Link to="/" onClick={handleCloseSideBar} className="items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900">
           <SiFranprix/> <span>Dashboard Cantina</span>
         </Link>
         <TooltipComponent content="Menu" position='BottomCenter'>
@@ -37,7 +43,7 @@ const Sidebar = () => {
           <NavLink
             to="/teste"
             key="01"
-            onClick={()=>{}}
+            onClick={handleCloseSideBar}
             className={({ isActive }) => (isActive ? activeLink : normalLink)}>
               <SiShutterstock/>
               <span className='capitalize'> Inventário </span>
@@ -46,7 +52,7 @@ const Sidebar = () => {
             <NavLink
             to="/orders"
             key="01"
-            onClick={()=>{}}
+            onClick={handleCloseSideBar}
             className={({ isActive }) => (isActive ? activeLink : normalLink)}>
               <GiBuyCard/>
               <span className='capitalize'> Encomendas </span>
@@ -57,7 +63,7 @@ const Sidebar = () => {
           <NavLink
             to="/students"
             key="01"
-            onClick={()=>{}}
+            onClick={handleCloseSideBar}
             className={({ isActive }) => (isActive ? activeLink : normalLink)}>
               <BsFillPersonFill/>
               <span className='capitalize'> Alunos </span>
@@ -66,7 +72,7 @@ const Sidebar = () => {
             <NavLink
             to="/employees"
             key="01"
-            onClick={()=>{}}
+            onClick={handleCloseSideBar}
             className={({ isActive }) => (isActive ? activeLink : normalLink)}>
               <BsPersonBadge/>
               <span className='capitalize'> Staff </span>
@@ -77,7 +83,7 @@ const Sidebar = () => {
           <NavLink
             to="/calendar"
             key="01"
-            onClick={()=>{}}
+            onClick={handleCloseSideBar}
             className={({ isActive }) => (isActive ? activeLink : normalLink)}>
               <AiOutlineCalendar/>
               <span className='capitalize'> Calendário </span>
@@ -85,7 +91,7 @@ const Sidebar = () => {
             <NavLink
             to="/import"
             key="01"
-            onClick={()=>{}}
+            onClick={handleCloseSideBar}
             className={({ isActive }) => (isActive ? activeLink : normalLink)}>
               <CgMenuBoxed/>
               <span className='capitalize'> Importar Ementas </span>
