@@ -20,7 +20,7 @@ const Sidebar = () => {
     }
   }
 
-  const activeLink = 'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg  text-white  text-md m-2';
+  const activeLink = 'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-gray-200 text-md m-2';
   const normalLink = 'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-md text-gray-700 dark:text-gray-200 dark:hover:text-black hover:bg-light-gray m-2';
 
   return (
@@ -51,7 +51,7 @@ const Sidebar = () => {
 
             <NavLink
             to="/orders"
-            key="01"
+            key="02"
             onClick={handleCloseSideBar}
             className={({ isActive }) => (isActive ? activeLink : normalLink)}>
               <GiBuyCard/>
@@ -62,7 +62,7 @@ const Sidebar = () => {
           <p className='text-gray-400 dark:text-gray-400 m-3 mt-4 uppercase'> Pessoal </p>
           <NavLink
             to="/students"
-            key="01"
+            key="03"
             onClick={handleCloseSideBar}
             className={({ isActive }) => (isActive ? activeLink : normalLink)}>
               <BsFillPersonFill/>
@@ -71,7 +71,7 @@ const Sidebar = () => {
 
             <NavLink
             to="/employees"
-            key="01"
+            key="04"
             onClick={handleCloseSideBar}
             className={({ isActive }) => (isActive ? activeLink : normalLink)}>
               <BsPersonBadge/>
@@ -82,7 +82,7 @@ const Sidebar = () => {
           <p className='text-gray-400 dark:text-gray-400 m-3 mt-4 uppercase'> Outros </p>
           <NavLink
             to="/calendar"
-            key="01"
+            key="05"
             onClick={handleCloseSideBar}
             className={({ isActive }) => (isActive ? activeLink : normalLink)}>
               <AiOutlineCalendar/>
@@ -90,7 +90,7 @@ const Sidebar = () => {
             </NavLink>
             <NavLink
             to="/import"
-            key="01"
+            key="06"
             onClick={handleCloseSideBar}
             className={({ isActive }) => (isActive ? activeLink : normalLink)}>
               <CgMenuBoxed/>

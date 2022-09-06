@@ -42,7 +42,6 @@ const App = () => {
           <div className='fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full'>
             <Navbar/>
           </div>
-        </div>
         <Routes>
           {/*  Dashboard principal  */}
           <Route path="/" element={<Home />} />
@@ -63,6 +62,7 @@ const App = () => {
           */}
           
         </Routes>
+      </div>
       </div>
       </BrowserRouter>
     </div>
