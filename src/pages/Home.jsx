@@ -145,16 +145,9 @@ const Home = () => {
     <div className='flex gap-10 flex-wrap justify-center'>
       <div className='bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl md:w-780'>
         <div className='flex justify-between'>
-          <p className="font-semibold text-xl">Consumo/Desperdício</p>
+          <p className="font-semibold text-xl">Consumo e Desperdício em Kg</p>
           <div className='flex items-center gap-4'>
-          <p className='flex items-center gap-2 text-green-600 hover:drop-shadow-xl'>
-              <span><GoPrimitiveDot/></span>
-              <span>Confecionado</span>
-            </p>
-            <p className='flex items-center gap-2 text-red-600 hover:drop-shadow-xl'>
-              <span><GoPrimitiveDot/></span>
-              <span>Desperdício</span>
-            </p>
+          
             
 
           </div>
