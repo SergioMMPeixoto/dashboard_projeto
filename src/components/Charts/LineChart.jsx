@@ -16,6 +16,7 @@ const LineChart = () => {
 
   //Ia fazer um for each mas nao vale a pena porquue o grafico vai sempre mostrar 7 dias, nem que os iniciais sejam 0 o que se pode fazer é mesmo verificar se esse numero é != 0 para nao arrebentar
 
+  
   useEffect(() => {
     api.get("/daydata/")
        .then((response) => {
@@ -31,6 +32,10 @@ const LineChart = () => {
         console.error("Erro : " + err);
       });
   }, []);
+
+  
+
+  
   
   const chartData = [[
     {x: new Date(date[6]), y: waste[6]},
